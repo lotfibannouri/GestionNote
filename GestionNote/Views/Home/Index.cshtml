@@ -1,8 +1,47 @@
-﻿@{
+﻿@model List<Etudiant>
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+ 
+@if (ViewBag.DpMessage != null)
+{
+    <div class="alert alert-success" role="alert">
+        @ViewBag.DpMessage
+    </div>
+}
+
+@if (ViewBag.errorMessage != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.errorMessage
+    </div>
+}
+<div class="container">
+
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Nom</th>
+            <th scope="col">Prénom</th>
+            <th scope="col">Action </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var Et in Model)
+        {
+            <tr>
+                <td scope="col">@Et.Nom</td>
+                <td scope="col">@Et.Prenom</td>     
+                <td><a class="btn btn-warning" asp-controller="Note" asp-action="Create" asp-route-id="@Et.ID">Note</a></td>
+            </tr>
+        }
+
+
+    </tbody>
+
+</table>
+
 </div>

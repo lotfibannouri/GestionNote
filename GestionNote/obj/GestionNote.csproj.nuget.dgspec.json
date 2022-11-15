@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lotfi\\Desktop\\GL3\\asp.net core\\GestionNote\\GestionNote\\GestionNote.csproj": {}
+    "C:\\Users\\lob\\Source\\Repos\\GestionNote\\GestionNote\\GestionNote.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lotfi\\Desktop\\GL3\\asp.net core\\GestionNote\\GestionNote\\GestionNote.csproj": {
+    "C:\\Users\\lob\\Source\\Repos\\GestionNote\\GestionNote\\GestionNote.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lotfi\\Desktop\\GL3\\asp.net core\\GestionNote\\GestionNote\\GestionNote.csproj",
+        "projectUniqueName": "C:\\Users\\lob\\Source\\Repos\\GestionNote\\GestionNote\\GestionNote.csproj",
         "projectName": "GestionNote",
-        "projectPath": "C:\\Users\\lotfi\\Desktop\\GL3\\asp.net core\\GestionNote\\GestionNote\\GestionNote.csproj",
-        "packagesPath": "C:\\Users\\lotfi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lotfi\\Desktop\\GL3\\asp.net core\\GestionNote\\GestionNote\\obj\\",
+        "projectPath": "C:\\Users\\lob\\Source\\Repos\\GestionNote\\GestionNote\\GestionNote.csproj",
+        "packagesPath": "C:\\Users\\lob\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lob\\Source\\Repos\\GestionNote\\GestionNote\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\lotfi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lob\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -71,7 +71,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -83,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

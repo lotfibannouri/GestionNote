@@ -13,7 +13,7 @@ namespace GestionNote.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder opbuilder)
         {
-            opbuilder.UseSqlServer("Data Source=LAPTOP-GR853ENN\\SQL19;Initial Catalog=GestionNote;Integrated Security=True; Encrypt=False");
+            opbuilder.UseSqlServer("Data Source=PC06\\SQLEXPRESS;Initial Catalog=GestionNote;Integrated Security=True; Encrypt=False");
         }
     }
 

@@ -2,7 +2,7 @@
 
 namespace GestionNote.Repositories
 {
-    public class EtudiantRepository
+    public class EtudiantRepository<T> : IRepository<T> where T : class
     {
         private readonly AppDbContext _appDbContext;
         public EtudiantRepository(AppDbContext appDbContext)
@@ -11,35 +11,63 @@ namespace GestionNote.Repositories
 
         }
 
-        public void AddEtudiant(Etudiant etudiant)
+        public void Delete(int id)
         {
-
-            _appDbContext.Etudiant.Add(etudiant);
-            _appDbContext.SaveChanges();
-
-        }
-
-        public void EditEtudiant(Etudiant etudiant)
-        {
-            _appDbContext.Etudiant.Update(etudiant);
+            _appDbContext.Set<T>().Remove(this.Get(id));
             _appDbContext.SaveChanges();
         }
 
-        public Etudiant? GetEtudiantByID(int id)
+        public T Get(long id)
         {
-            return _appDbContext.Etudiant.Find(id);
+            return _appDbContext.Set<T>().Find(id);
         }
 
-
-        public List<Etudiant>? GetEtudiants()
+        public IEnumerable<T> GetAll()
         {
-            return _appDbContext.Etudiant.ToList();
+            return _appDbContext.Set<T>().ToList();
         }
 
-        public void RemoveEtudiant(int id)
+        public void Insert(T entity)
         {
-            _appDbContext.Etudiant.Remove(this.GetEtudiantByID(id));
+            _appDbContext.Set<T>().Add(entity);
             _appDbContext.SaveChanges();
         }
+
+        public void Update(T entity)
+        {
+            _appDbContext.Set<T>().Update(entity);
+            _appDbContext.SaveChanges();
+        }
+
+        //public void AddEtudiant(T objet)
+        //{
+
+        //    _appDbContext.Set<T>().Add(objet);
+        //    _appDbContext.SaveChanges();
+
+        //}
+
+        //public void EditEtudiant(T objet)
+        //{
+        //    _appDbContext.Set<T>().Update(objet);
+        //    _appDbContext.SaveChanges();
+        //}
+
+        //public T? GetEtudiantByID(int id)
+        //{
+        //    return _appDbContext.Set<T>.Find(id);
+        //}
+
+
+        //public List<T>? GetEtudiants()
+        //{
+        //    return _appDbContext.Set<T>().ToList();
+        //}
+
+        //public void RemoveEtudiant(int id)
+        //{
+        //    _appDbContext.Set<T>.Remove(this.GetEtudiantByID(id));
+        //    _appDbContext.SaveChanges();
+        //}
     }
 }
