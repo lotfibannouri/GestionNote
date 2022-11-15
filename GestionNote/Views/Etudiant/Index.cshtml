@@ -1,0 +1,54 @@
+﻿@model List<Etudiant>
+
+
+
+
+@if (ViewBag.DpMessage != null)
+{
+    <div class="alert alert-success" role="alert">
+        @ViewBag.DpMessage
+    </div>
+}
+
+@if (ViewBag.errorMessage != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.errorMessage
+    </div>
+}
+<div class="card">
+    <p>Liste des Clients</p>
+    <span class="btn btn-secondary"><a style="text-decoration:none; color:white;" asp-controller="Etudiant" asp-action="Create">Ajouter un Etudiant</a></span>
+
+</div>
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Nom</th>
+            <th scope="col">Prénom</th>
+            <th scope="col">Action </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var Et in Model)
+        {
+            <tr>
+                <th scope="col">@Et.Nom</th>
+                <th scope="col">@Et.Prenom</th>
+
+                <th scope="col">
+                    <a class="btn btn-warning" asp-controller="Etudiant" asp-action="Edit" asp-route-id="@Et.ID">Modifier</a>
+                    <a class="btn btn-primary" asp-controller="Etudiant" asp-action="Detail" asp-route-id="@Et.ID">
+                        Détails
+                    </a>
+                    <a class="btn btn-danger" asp-controller="Etudiant" asp-action="Delete" asp-route-id="@Et.ID">Supprimer </a>
+                </th>
+
+            </tr>
+        }
+
+
+    </tbody>
+
+</table>
